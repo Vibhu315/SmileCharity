@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileCharity Payment</title>
+  <link rel="stylesheet" href="home.css">
+  <title>Payment Page</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">SmileCharity</a>
+    <nav class="nav-items">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="donation.html">Donation</a>
+      <a href="signup.html">Sign in</a>
+
+    </nav>
+  </header>
+
+
+  
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .form-group .card-group {
+      display: flex;
+    }
+
+    .form-group .card-group input {
+      flex: 1;
+      margin-right: 5px;
+    }
+
+    .form-group .card-group input:last-child {
+      margin-right: 0;
+    }
+
+    .form-group .card-group input.card-cvv {
+      width: 30%;
+    }
+
+    .pay-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment Details</h2>
+    <form>
+      <div class="form-group">
+        <label for="card-name">Cardholder Name</label>
+        <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="card-number">Card Number</label>
+        <div class="card-group">
+          <input type="text" id="card-number1" name="card-number1" maxlength="4" placeholder="####" required>
+          <input type="text" id="card-number2" name="card-number2" maxlength="4" placeholder="####" required>
+          <input type="text" id="card-number3" name="card-number3" maxlength="4" placeholder="####" required>
+          <input type="text" id="card-number4" name="card-number4" maxlength="4" placeholder="####" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="card-expiry">Expiration Date</label>
+        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label for="card-cvv">CVV</label>
+        <input type="text" id="card-cvv" name="card-cvv" maxlength="3" class="card-cvv" required>
+      </div>
+      <div class="form-group">
+        <label for="payment-amount">Payment Amount</label>
+        <input type="text" id="payment-amount" name="payment-amount" placeholder="Enter amount" required>
+      </div>
+      <button type="submit" class="pay-btn" onclick="paymentdone()">Pay Now</button>
+    </form>
+  </div>
+  <script>
+    function paymentdone(){
+      alert('payment done successfully')
+    }
+  </script>
+</body>
+</html>
