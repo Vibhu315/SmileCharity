@@ -1,12 +1,12 @@
 function paymentdone(){
     var nam=document.getElementById("cardname")
+    var regx=/^[a-zA-Z]{20}$/;
     if(nam.value.trim()=="")
     {
         alert("ENTER CARDHOLDER NAME")
         return false
     }
-    var regx=/^[a z A Z]{20}$/
-    if(regx.test(nam)){
+    else if(regx.test(nam)){
         alert("ENTER PROPER CARDHOLDER NAME")
         return false
     }
