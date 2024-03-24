@@ -82,39 +82,35 @@
 <body>
   <div class="container">
     <h2>Payment Details</h2>
-    <form>
+    <form onsubmit="return paymentdone()" action="thankyou.html">
       <div class="form-group">
         <label for="card-name">Cardholder Name</label>
-        <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+        <input type="text" id="card-name" name="card-name" placeholder="John Doe">
       </div>
       <div class="form-group">
         <label for="card-number">Card Number</label>
         <div class="card-group">
-          <input type="text" id="card-number1" name="card-number1" maxlength="4" placeholder="####" required>
-          <input type="text" id="card-number2" name="card-number2" maxlength="4" placeholder="####" required>
-          <input type="text" id="card-number3" name="card-number3" maxlength="4" placeholder="####" required>
-          <input type="text" id="card-number4" name="card-number4" maxlength="4" placeholder="####" required>
+          <input type="text" id="card-number1" name="card-number1" maxlength="4" placeholder="####" >
+          <input type="text" id="card-number2" name="card-number2" maxlength="4" placeholder="####" >
+          <input type="text" id="card-number3" name="card-number3" maxlength="4" placeholder="####" >
+          <input type="text" id="card-number4" name="card-number4" maxlength="4" placeholder="####" >
         </div>
       </div>
       <div class="form-group">
         <label for="card-expiry">Expiration Date</label>
-        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" >
       </div>
       <div class="form-group">
         <label for="card-cvv">CVV</label>
-        <input type="text" id="card-cvv" name="card-cvv" maxlength="3" class="card-cvv" required>
+        <input type="text" id="card-cvv" name="card-cvv" maxlength="3" class="card-cvv" >
       </div>
       <div class="form-group">
         <label for="payment-amount">Payment Amount</label>
-        <input type="text" id="payment-amount" name="payment-amount" placeholder="Enter amount" required>
+        <input type="text" id="payment-amount" name="payment-amount" placeholder="Enter amount" >
       </div>
-      <button type="submit" class="pay-btn" onclick="paymentdone()">Pay Now</button>
+      <input type="submit" style="align-items: center; border:1px solid black;border-radius:10px;margin-left: 160px;">
     </form>
   </div>
-  <script>
-    function paymentdone(){
-      alert('payment done successfully')
-    }
-  </script>
+  <script src="payment.js"></script>
 </body>
 </html>
