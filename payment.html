@@ -22,95 +22,54 @@
     </nav>
   </header>
 
-
-  
-  <style>
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
-    .form-group .card-group {
-      display: flex;
-    }
-
-    .form-group .card-group input {
-      flex: 1;
-      margin-right: 5px;
-    }
-
-    .form-group .card-group input:last-child {
-      margin-right: 0;
-    }
-
-    .form-group .card-group input.card-cvv {
-      width: 30%;
-    }
-
-    .pay-btn {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-top: 20px;
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  </style>
 </head>
+<style>
+  
+form {
+  margin-top: 100px;
+  margin-left: 550px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+input[type="text"], input[type="number"], input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
 <body>
-  <div class="container">
-    <h2>Payment Details</h2>
-    <form onsubmit="return paymentdone()" action="thankyou.html">
-      <div class="form-group">
-        <label for="cardname">Cardholder Name</label>
-        <input type="text" id="cardname" name="card-name" placeholder="John Doe">
-      </div>
-      <div class="form-group">
-        <label for="card-number">Card Number</label>
-        <div class="card-group">
-          <input type="text" id="card-number1" name="card-number1" maxlength="4" placeholder="####" >
-          <input type="text" id="card-number2" name="card-number2" maxlength="4" placeholder="####" >
-          <input type="text" id="card-number3" name="card-number3" maxlength="4" placeholder="####" >
-          <input type="text" id="card-number4" name="card-number4" maxlength="4" placeholder="####" >
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="card-expiry">Expiration Date</label>
-        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" >
-      </div>
-      <div class="form-group">
-        <label for="card-cvv">CVV</label>
-        <input type="text" id="card-cvv" name="card-cvv" maxlength="3" class="card-cvv" >
-      </div>
-      <div class="form-group">
-        <label for="payment-amount">Payment Amount</label>
-        <input type="text" id="payment-amount" name="payment-amount" placeholder="Enter amount" >
-      </div>
-      <input type="submit" style="align-items: center; border:1px solid black;border-radius:10px;margin-left: 160px;">
-    </form>
-  </div>
   <script src="payment.js"></script>
+   <form onclick="return paymentdone()" action="thankyou.html">
+    <label for="cardholderName">CardHolder Name</label>
+    <input type="text" id="cardholderName" name="cardholderName" placeholder="Vibhu Patel"/>
+    <label for="cardNumber">Card Number</label>
+    <input type="text" id="cardNumber" name="cardNumber" placeholder="#### #### ####" >
+    <label for="expireDate">Expiration Date</label>
+    <input type="text" id="expireDate" name="expireDate" placeholder="MM-YYYY" >
+    <label for="cvv">CVV</label>
+    <input type="password" id="cvv" name="cvv">
+    <label for="paymentAmount">Payment Amount</label>
+    <input type="number" id="paymentAmount" name="paymentAmount" placeholder="Amount in Ruppes">
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
